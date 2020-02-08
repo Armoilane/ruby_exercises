@@ -1,6 +1,6 @@
-dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
+DICTIONARY = %w(below,down,go,going,horn,how,howdy,it,i,low,own,part,partner,sit)
 
-def substrings ( str, dictionary )
+def substrings(str)
 
   clean_arr = str.downcase.split(/\s|\p{P}/).map { |w| 
     if w =~ /\p{P}/
@@ -13,7 +13,7 @@ def substrings ( str, dictionary )
   matches = Hash.new(0)
 
   clean_arr.map { |word|  
-    dictionary.map { |dict| 
+    DICTIONARY.map { |dict| 
       matches[word] += 1 if dict[word]
     }
   }
@@ -22,4 +22,4 @@ def substrings ( str, dictionary )
 
 end
 
-p substrings("Howdy partner, sit down! How's it going?", dictionary)
+p substrings("Howdy partner, sit down! How's it going?")
