@@ -6,3 +6,4 @@ Ruby exercises from the Odin Project
 - Substrings
 - Bubble sort and sort by
 - Enumerable
+- TicTacToe on console
