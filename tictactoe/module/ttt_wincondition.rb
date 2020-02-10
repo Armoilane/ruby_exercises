@@ -1,5 +1,4 @@
 module Winconditions
-  
   def wincondition?
     full_diagonal? || full_row? || full_column?
   end
@@ -24,5 +23,4 @@ module Winconditions
       diagonal2.all? { |c| c == 'X' } ||
       diagonal2.all? { |c| c == 'O' }
   end
-
 end
