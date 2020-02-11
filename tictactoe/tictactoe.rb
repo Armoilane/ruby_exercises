@@ -8,7 +8,7 @@ class TicTacToe
 
   def initialize
     @coordinates = []
-    @board = Array.new(3) { Array.new(3, ' ') }
+    create_board
   end
 
   def game
@@ -19,15 +19,15 @@ class TicTacToe
       break if wincondition?
 
       if turn == 2
-        player1_play
+        make_play(@player1)
         turn = 1
       else
-        player2_play
+        make_play(@player2)
         turn = 2
       end
       next
     end
-    puts "Player#{turn} wins, but shouldn't have!"
+    puts "Someone wins, but shouldn't have!"
   end
 end
 
@@ -35,12 +35,10 @@ class Player
   require './module/ttt_player_actions.rb'
   include PlayerActions
 
-  attr_accessor :name
+  attr_accessor :name, :mark
   def initialize(name)
     @name = name
   end
-
-
 end
 
 a = TicTacToe.new
